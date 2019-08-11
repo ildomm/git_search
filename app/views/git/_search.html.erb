@@ -1,0 +1,9 @@
+
+<br/>
+<p>First 10 results:<p/>
+<% @repositories.each do |repository| %>
+  <%= link_to repository, repository %>
+  <br/>
+<% end %>
+<br/>
+<%= link_to "Full result list", "https://github.com/search?q=#{@term}", target: "_blank"%>

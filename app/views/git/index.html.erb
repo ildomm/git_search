@@ -1,0 +1,14 @@
+<h1>Search area</h1>
+<p>Find repository in Github</p>
+
+<%= form_tag git_search_path, :remote => true do %>
+    <%= text_field_tag :term %>
+    <%= submit_tag "Search" %>
+<% end %>
+
+<br/>
+
+<div>
+  <div id="counter"></div>
+  <div id="repositories"></div>
+</div>

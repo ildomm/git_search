@@ -1,0 +1,3 @@
+$("#counter").html("<%= @counter %>");
+$("#repositories").html("<%= escape_javascript(render partial: 'search',
+                                                      locals: { repositories: @repositories, term: @term } ) %>");
