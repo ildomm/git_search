@@ -6,7 +6,7 @@ class GitController < ApplicationController
   end
 
   def search
-    content = open('https://github.com/search?q=' + params[:term]) {|io| io.read}
+    content = open("https://github.com/search?q=#{params[:term]}") {|io| io.read}
     document = Nokogiri::HTML(content)
 
     @term = params[:term]
