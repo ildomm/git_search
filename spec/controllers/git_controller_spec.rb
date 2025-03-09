@@ -1,3 +1,4 @@
+# spec/controllers/git_controller_spec.rb
 require 'rails_helper'
 
 RSpec.describe GitController, type: :controller do
@@ -13,7 +14,7 @@ RSpec.describe GitController, type: :controller do
 
     it "renders the search template with valid input" do
       stub_request(:get, "https://github.com/search?q=test").
-        with(headers: { 'Accept' => '*/*', 'User-Agent' => 'YourAppName/1.0 (contact@example.com)' }).
+        with(headers: { 'Accept' => '*/*', 'User-Agent' => 'GitSearch/1.0 (lala@example.com)' }).
         to_return(status: 200, body: fixture_body, headers: {})
 
       post :search, params: { term: "test" }, format: :js
@@ -23,7 +24,7 @@ RSpec.describe GitController, type: :controller do
 
     it "locates results with valid input" do
       stub_request(:get, "https://github.com/search?q=test").
-        with(headers: { 'Accept' => '*/*', 'User-Agent' => 'YourAppName/1.0 (contact@example.com)' }).
+        with(headers: { 'Accept' => '*/*', 'User-Agent' => 'GitSearch/1.0 (lala@example.com)' }).
         to_return(status: 200, body: fixture_body, headers: {})
 
       post :search, params: { term: "test" }, format: :js
