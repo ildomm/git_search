@@ -2,8 +2,8 @@
 
 <div align="center">
 
-[![Ruby](https://img.shields.io/badge/Ruby-2.7%2B-red.svg)](https://www.ruby-lang.org/)
-[![Rails](https://img.shields.io/badge/Rails-5.2.0-red.svg)](https://rubyonrails.org/)
+[![Ruby](https://img.shields.io/badge/Ruby-3.3%2B-green.svg)](https://www.ruby-lang.org/)
+[![Rails](https://img.shields.io/badge/Rails-7.2.2-green.svg)](https://rubyonrails.org/)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
 A simple GitHub search experiment.
