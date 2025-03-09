@@ -1,8 +1,8 @@
-# 📅 GraphQL Kalender
+# 📅 Git Search
 
 <div align="center">
 
-[![Ruby](https://img.shields.io/badge/Ruby-2.7%2B-red.svg)](https://www.ruby-lang.org/)
+[![Ruby](https://img.shields.io/badge/Ruby-2.6%2B-red.svg)](https://www.ruby-lang.org/)
 [![Rails](https://img.shields.io/badge/Rails-5.2.0-red.svg)](https://rubyonrails.org/)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
