@@ -1,6 +1,9 @@
 require_relative 'boot'
 
 require 'rails/all'
+
+
+
 require 'open-uri'
 require 'nokogiri'
 
