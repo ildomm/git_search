@@ -9,22 +9,31 @@ RSpec.describe GitController, type: :controller do
   end
 
   describe "POST search" do
-    it "renders the search template" do
-      post :search, format: :js
+    let(:fixture_body) { File.read(Rails.root.join("spec/fixtures/git_1.html")) }
+
+    it "renders the search template with valid input" do
+      stub_request(:get, "https://github.com/search?q=test").
+        with(headers: { 'Accept' => '*/*', 'User-Agent' => 'YourAppName/1.0 (contact@example.com)' }).
+        to_return(status: 200, body: fixture_body, headers: {})
+
+      post :search, params: { term: "test" }, format: :js
       expect(response).to render_template("search")
+      expect(response).to have_http_status(:ok)
     end
 
-    it "locate results" do
+    it "locates results with valid input" do
+      stub_request(:get, "https://github.com/search?q=test").
+        with(headers: { 'Accept' => '*/*', 'User-Agent' => 'YourAppName/1.0 (contact@example.com)' }).
+        to_return(status: 200, body: fixture_body, headers: {})
 
-      body = open(Rails.root + "spec/fixtures/git_1.html") {|io| io.read}
-
-      stub_request(:get, "https://github.com/search?q=").
-          with(headers: {'Accept'=>'*/*', 'User-Agent'=>'Ruby'}).
-          to_return(status: 200, body: body, headers: {})
-
-      post :search, format: :js
+      post :search, params: { term: "test" }, format: :js
       expect(assigns(:counter)).to eq("1,981 repository results")
     end
-  end
 
+    it "handles missing search term" do
+      post :search, params: { term: "" }, format: :js
+      expect(assigns(:counter)).to eq("Search term is required")
+      expect(response).to have_http_status(:unprocessable_entity)
+    end
+  end
 end
