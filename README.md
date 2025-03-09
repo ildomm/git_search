@@ -12,12 +12,11 @@ A simple GitHub search experiment.
 </div>
 
 
-
 ## 🚀 Getting Started
 
 ### Prerequisites
 
-- Ruby 2.6+
+- Ruby 3.3+
 - Make
 
 ### Quick Setup
