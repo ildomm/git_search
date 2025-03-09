@@ -10,6 +10,10 @@ gem 'sass-rails', '~> 5.0'
 gem 'coffee-rails', '~> 4.2'
 gem 'jquery-rails'
 
+group :development, :test do
+  gem 'rubocop'
+end
+
 group :test do
   gem "rspec-rails"
   gem 'rails-controller-testing'
